@@ -1,0 +1,67 @@
+.menu{
+    margin-left: 150px;
+}
+
+.margin{
+    margin-top: 15px;
+    background-color: blue;
+}
+
+.tamanhocard{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.nome{
+    margin-top: 30px;
+}
+
+.form{
+    margin-top: 30px;
+}
+
+.linha{
+    background-color: red;
+}
+
+.button{
+    width: 700px;
+    margin-top: 30px;
+}
+
+.text{
+    margin-left: 300px;
+    margin-top: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container{
+    width: 100%;
+}
+
+.fundo{
+    background-color: aquamarine;
+}
+
+.textpor{
+    margin-left: 250px;
+    margin-top: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.imgpor{
+    margin-left: 360px;
+    margin-top: 50px;
+}
+
+.font{
+    margin-top: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.imgserv{
+    margin-left: 328px;
+    margin-top: 20px;
+}
