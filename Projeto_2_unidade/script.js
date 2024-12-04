@@ -18,6 +18,13 @@ function adicionarContato() {
     
     contatos.push(novocontato);
     alert('Contato cadastrado com sucesso!');
+    
+
+    //limpar o formulario
+    document.getElementById("id_nome").value = "";
+    document.getElementById("id_cpf").value = "";
+    document.getElementById("id_data").value = "";
+    document.getElementById("id_endereco").value = "";
 }
 
 function exibirContatos() {
@@ -61,5 +68,6 @@ function excluirContato() {
     } else {
       alert('CPF não encontrado.');
     }
+    exibirContatos()
   }
   
