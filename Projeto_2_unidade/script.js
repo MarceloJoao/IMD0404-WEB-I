@@ -20,17 +20,18 @@ function adicionarContato() {
     alert('Contato cadastrado com sucesso!');
 }
 
-
-
 function exibirContatos() {
     var div = document.querySelector("#divContatos")
+    div.innerHTML = ""
     contatos.forEach(function(contato) {
         var elemento = document.createElement("p");
-       elemento.innerHTML = contato.nome + "<br>" + contato.cpf + "<br>" + contato.datanascimento + "<br>" + contato.endereco
+       elemento.innerHTML = contato.nome + "<br>" + contato.cpf + "<br>" + contato.data_nascimento + "<br>" + contato.endereco
 
        div.appendChild(elemento)
+
     });
 }
+
 
 function buscarContatos() {
     
@@ -41,27 +42,24 @@ function buscarContatos() {
     });
 
     if (contato) {
-        prompt('Contato encontrado:', `Nome: ${contato.nome}\n Data de Nascimento: ${contato.datanascimento}\n Endereco: ${contato.endereco}`);
+        alert(`Contato encontrado: \nNome: ${contato.nome}\nData de Nascimento: ${contato.data_nascimento}\nEndereço: ${contato.endereco}`);
     } else {
         alert('Erro: CPF não encontrado!');
     }
 }
 
 function excluirContato() {
-
-    var cpf = prompt('Informe o CPF da pessoa').trim();
-
-    const contato = contatos.find(function(contato) {
-        return contato.cpf === cpf;
+    var cpf = prompt('Informe o CPF da pessoa que deseja remover: ').trim();
+  
+    var index = contatos.findIndex(function(contato) {
+      return contato.cpf === cpf;
     });
-   
-    //-1 pois
-    if (contato !== -1) {
-        contatos.splice(contato, 1); 
-        exibirContatos(); 
-        alert('Contato excluído com sucesso!');
+  
+    if(index !== -1) {
+      contatos.splice(index, 1);
+      alert('Contato removido com sucesso!');
     } else {
-        alert('Erro: CPF não encontrado!');
+      alert('CPF não encontrado.');
     }
-}
-
+  }
+  
