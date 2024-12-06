@@ -1,5 +1,6 @@
 "use strict"
-const contatos = [];
+const contatos = [{ nome: "João Silva", cpf: "123.456.789-00", data_nascimento: "1990-01-01", endereco: "Rua X, Bairro Y" },
+    { nome: "Maria Santos", cpf: "987.654.321-00", data_nascimento: "1995-05-05", endereco: "Rua Z, Bairro W" }];
 
 function adicionarContato() {
     var nome = document.getElementById("id_nome").value.trim();
@@ -30,9 +31,19 @@ function adicionarContato() {
 function exibirContatos() {
     var div = document.querySelector("#divContatos")
     div.innerHTML = ""
+
     contatos.forEach(function(contato) {
-        var elemento = document.createElement("p");
-       elemento.innerHTML = contato.nome + "<br>" + contato.cpf + "<br>" + contato.data_nascimento + "<br>" + contato.endereco
+       var elemento = document.createElement("div");
+       elemento.className = "card mb-3"
+       //elemento.innerHTML = contato.nome + "<br>" + contato.cpf + "<br>" + contato.data_nascimento + "<br>" + contato.endereco
+       elemento.innerHTML = `
+            <div class="card-body">
+                <p class="card-title estilofonte">${contato.nome}</h5>
+                <p class="card-text"><strong>CPF:</strong> ${contato.cpf}</p>
+                <p class="card-text"><strong>Data de Nascimento:</strong> ${contato.data_nascimento}</p>
+                <p class="card-text"><strong>Endereço:</strong> ${contato.endereco}</p>
+            </div>
+        `;
 
        div.appendChild(elemento)
 
