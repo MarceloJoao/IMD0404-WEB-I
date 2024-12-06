@@ -6,16 +6,25 @@ function adicionarContato() {
     var cpf = document.getElementById("id_cpf").value.trim();
     var data_nascimento = document.getElementById("id_data").value.trim();
     var endereco = document.getElementById("id_endereco").value.trim();
-  
+
+    //verificar se algum campo é vazio
+    if (!nome || !cpf || !data_nascimento || !endereco) {
+        alert('Erro: Todos os campos precisam ser preenchidos!');
+        return;
+    }
+    
+    //verificar se o cpf é igual
     if (contatos.some(function(contato) {
        return contato.cpf === cpf;
     })) {
         alert('Erro: CPF já cadastrado!');
         return;
     }
-
+    
+    //criando um objeto
     const novocontato = {nome, cpf, data_nascimento, endereco};
     
+    //adicionando no array de contatos
     contatos.push(novocontato);
     alert('Contato cadastrado com sucesso!');
     
