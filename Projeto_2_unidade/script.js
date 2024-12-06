@@ -1,6 +1,5 @@
 "use strict"
-const contatos = [{ nome: "João Silva", cpf: "123.456.789-00", data_nascimento: "1990-01-01", endereco: "Rua X, Bairro Y" },
-    { nome: "Maria Santos", cpf: "987.654.321-00", data_nascimento: "1995-05-05", endereco: "Rua Z, Bairro W" }];
+const contatos = [];
 
 function adicionarContato() {
     var nome = document.getElementById("id_nome").value.trim();
