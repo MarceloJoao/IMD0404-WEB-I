@@ -46,7 +46,7 @@ function exibirContatos() {
        //elemento.innerHTML = contato.nome + "<br>" + contato.cpf + "<br>" + contato.data_nascimento + "<br>" + contato.endereco
        elemento.innerHTML = `
             <div class="card-body">
-                <p class="card-title estilofonte">${contato.nome}</h5>
+                <p class="card-title estilofonte">${contato.nome}</p>
                 <p class="card-text"><strong>CPF:</strong> ${contato.cpf}</p>
                 <p class="card-text"><strong>Data de Nascimento:</strong> ${contato.data_nascimento}</p>
                 <p class="card-text"><strong>Endereço:</strong> ${contato.endereco}</p>
