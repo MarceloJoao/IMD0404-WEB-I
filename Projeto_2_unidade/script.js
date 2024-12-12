@@ -60,7 +60,12 @@ function exibirContatos() {
 
 
 function buscarContatos() {
-    
+    //ocultar os contatos
+    var div = document.querySelector("#divContatos")
+    if(div){
+        div.innerHTML = "";
+    }   
+    //pesquisar pelo cpf
     var cpf = prompt('Informe o CPF da pessoa:').trim();
     //percorrer o array 
     var contato = contatos.find(function(contato) {
