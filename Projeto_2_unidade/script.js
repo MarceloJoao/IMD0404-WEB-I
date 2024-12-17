@@ -2,12 +2,13 @@
 const contatos = [];
 
 function adicionarContato() {
+    //pegando os campos
     var nome = document.getElementById("id_nome").value.trim();
     var cpf = document.getElementById("id_cpf").value.trim();
     var data_nascimento = document.getElementById("id_data").value.trim();
     var endereco = document.getElementById("id_endereco").value.trim();
 
-    //verificar se algum campo é vazio
+    //verificar se algum campo não foi preenchido
     if (!nome || !cpf || !data_nascimento || !endereco) {
         alert('Erro: Todos os campos precisam ser preenchidos!');
         return;
@@ -42,8 +43,10 @@ function exibirContatos() {
 
     contatos.forEach(function(contato) {
        var elemento = document.createElement("div");
+       //classe do bootstrap
        elemento.className = "card mb-3"
-       //elemento.innerHTML = contato.nome + "<br>" + contato.cpf + "<br>" + contato.data_nascimento + "<br>" + contato.endereco
+       
+       //criando card dinamicamente
        elemento.innerHTML = `
             <div class="card-body">
                 <p class="card-title estilofonte">${contato.nome}</p>
@@ -85,7 +88,8 @@ function excluirContato() {
     var index = contatos.findIndex(function(contato) {
       return contato.cpf === cpf;
     });
-  
+    
+    //usando o metodo splice para remover o contato
     if(index !== -1) {
       contatos.splice(index, 1);
       alert('Contato removido com sucesso!');
