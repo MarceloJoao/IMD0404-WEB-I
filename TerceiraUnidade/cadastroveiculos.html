@@ -8,30 +8,29 @@
     <title>Projeto terceira unidade</title>
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark navbar-expand-md">
-        <a class="navbar-brand" href="#">Locadora Elite</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Alterna navegação">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+    <a class="navbar-brand" href="#">Locadora Elite</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse menu" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Sobre a Empresa <span class="sr-only">(Página atual)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Listar Veículos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Cadastrar Veículo</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Excluir Veículo</a>
-            </li>
-          
-          </ul>
-        </div>
-    </nav>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sobre a Empresa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Listar Veículos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cadastrar Veículo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Excluir Veículo</a>
+        </li>
+      </ul>
+    </div>
+</nav>
       
     <h2>Locadora Elite - Cadastro de Veiculos</h2>
 
@@ -42,19 +41,19 @@
           <input type="text" class="form-control" id="marca" placeholder="Marca do veiculo">
         </div>
         <div class="form-group col-md-6">
-          <label for="input4">Modelo</label>
-          <input type="text" class="modelo" id="inputPassword4" placeholder="Modelo do veiculo">
+          <label for="inputEmail4">Modelo</label>
+          <input type="text" class="form-control" id="modelo" placeholder="Modelo do veiculo">
         </div>
-      </div>
-      <div class="form-group">
+        
+      <div class="form-group col-md-6">
         <label for="inputAddress">Ano de Fabricação</label>
         <input type="number" class="form-control" id="ano" placeholder="Ano de Fabricacao">
       </div>
-      <div class="form-group">
+      <div class="form-group col-md-6">
         <label for="inputAddress2">Cor</label>
         <input type="text" class="form-control" id="cor" placeholder="Cor do veiculo">
       </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
           <label for="inputEstado">Tipo</label>
           <select id="tipo" class="form-control">
             <option selected>Escolha o tipo</option>
@@ -63,19 +62,20 @@
             <option>Caminhão</option>
           </select>
         </div>
-        <div class="form-group col-md-2">
+        <div class="form-group col-md-6">
           <label for="input">Quilometragem</label>
           <input type="text" class="form-control" id="Quilometragem" placeholder="Quilometragem do veiculo">
         </div>
-      </div>
-      <div class="form-group">
+        <div class="form-group col-md-6">
           <label for="input">Numero de portas</label>
           <input type="number" class="form-control" id="portas">
       </div>
-      <div class="input-group">
+        <div class="input-group col-md-2 urlss">
           <label for="imagem">URL da Imagem:</label>
           <input type="url" id="imagem" required>
         </div>
+      </div>
+      
       <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
 
