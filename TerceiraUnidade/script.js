@@ -47,6 +47,59 @@ function cadastrarVeiculo(event) {
   // Redirecionar para a página de listagem de veículos (ou recarregar a página)
   window.location.href = "listagemveiculos.html";
 }
+/*function cadastrarVeiculo(event) {
+  event.preventDefault();
+
+  // Obter os valores dos campos do formulário
+  var marca = document.getElementById("marca").value;
+  var modelo = document.getElementById("modelo").value;
+  var ano = document.getElementById("ano").value;
+  var cor = document.getElementById("cor").value;
+  var tipo = document.getElementById("tipo").value;
+  var quilometragem = document.getElementById("quilometragem").value;
+  var portas = document.getElementById("portas").value;
+  var imagem = document.getElementById("imagem").value;
+
+  // Validação dos campos (todos devem ser preenchidos)
+  if (!marca || !modelo || !ano || !cor || !tipo || !quilometragem || !portas || !imagem) {
+    alert("Por favor, preencha todos os campos!");
+    return;
+  }
+
+  if (tipo === "Escolha o tipo") {
+    alert("Por favor, escolha um tipo válido!");
+    return;
+  }
+
+  // Criar um objeto para o veículo
+  const veiculo = {
+    marca,
+    modelo,
+    ano,
+    cor,
+    tipo,
+    quilometragem,
+    portas,
+    imagem,
+  };
+
+  // Enviar os dados para o JSON Server
+  fetch("http://localhost:3000/veiculos", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(veiculo),
+  })
+    .then((response) => {
+      if (response.ok) {
+        alert("Veículo cadastrado com sucesso no servidor!");
+        window.location.href = "listagemveiculos.html";
+      } else {
+        throw new Error("Erro ao cadastrar veículo no servidor");
+      }
+    })
+}*/
 
 // Função para exibir veículos
 function exibirVeiculos() {
@@ -80,32 +133,40 @@ function exibirVeiculos() {
 
 
 function exibirVeiculosNaTela(veiculos) {
-  const veiculosList = document.getElementById("veiculosdiv");
+  var div = document.querySelector("#veiculosdiv");
+  div.innerHTML = ""; // Limpar qualquer conteúdo anterior
 
-  if (veiculos.length === 0) {
-      veiculosList.innerHTML = "<p>Nenhum veículo disponível.</p>";
-      return;
-  }
-
-  // Gerar HTML para cada veículo
-  veiculos.forEach((veiculo, index) => {
-      veiculosList.innerHTML += `
-          <div class="card">
-              <img src="${veiculo.imagem}" alt="Imagem do veículo" class="card-img">
-              <div class="card-content">
-                  <h3>Veículo ${index + 1}</h3>
-                  <p><strong>Marca:</strong> ${veiculo.marca}</p>
-                  <p><strong>Modelo:</strong> ${veiculo.modelo}</p>
-                  <p><strong>Ano:</strong> ${veiculo.ano}</p>
-                  <p><strong>Cor:</strong> ${veiculo.cor}</p>
-                  <p><strong>Tipo:</strong> ${veiculo.tipo}</p>
-                  <p><strong>Quilometragem:</strong> ${veiculo.quilometragem} km</p>
-                  <p><strong>Portas:</strong> ${veiculo.portas}</p>
+  // Supondo que você tenha uma lista de veículos em uma variável `veiculos`
+  veiculos.forEach(function(veiculo) {
+     var elemento = document.createElement("div");
+     // Classe do Bootstrap
+     elemento.className = "card mb-3";
+     
+     // Criando o card dinamicamente
+     elemento.innerHTML = `
+          <div class="row no-gutters">
+              <div class="col-md-4">
+                  <img src="${veiculo.imagem}" class="card-img" alt="Imagem do veículo">
+              </div>
+              <div class="col-md-8">
+                  <div class="card-body">
+                      <p class="card-title estilofonte">${veiculo.modelo}</p>
+                      <p class="card-text">Marca: ${veiculo.marca}</p>
+                      <p class="card-text">Ano: ${veiculo.ano}</p>
+                      <p class="card-text">Cor: ${veiculo.cor}</p>
+                      <p class="card-text">Tipo: ${veiculo.tipo}</p>
+                      <p class="card-text">Quilometragem: ${veiculo.quilometragem}</p>
+                      <p class="card-text">Numero de Portas: ${veiculo.portas}</p>
+                      <button class="btn btn-danger" onclick="excluirVeiculo(${veiculo.id})">Excluir</button>
+                  </div>
               </div>
           </div>
       `;
+
+     div.appendChild(elemento); // Adicionar o card à div
   });
 }
+
 
 
 document.addEventListener('DOMContentLoaded', exibirVeiculos);

@@ -37,48 +37,47 @@
     <form>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="inputEmail4">Marca</label>
+          <label for="marca">Marca</label>
           <input type="text" class="form-control" id="marca" placeholder="Marca do veiculo">
         </div>
         <div class="form-group col-md-6">
-          <label for="inputEmail4">Modelo</label>
+          <label for="modelo">Modelo</label>
           <input type="text" class="form-control" id="modelo" placeholder="Modelo do veiculo">
         </div>
-        
-      <div class="form-group col-md-6">
-        <label for="inputAddress">Ano de Fabricação</label>
-        <input type="number" class="form-control" id="ano" placeholder="Ano de Fabricacao">
-      </div>
-      <div class="form-group col-md-6">
-        <label for="inputAddress2">Cor</label>
-        <input type="text" class="form-control" id="cor" placeholder="Cor do veiculo">
-      </div>
         <div class="form-group col-md-6">
-          <label for="inputEstado">Tipo</label>
+          <label for="ano">Ano de Fabricação</label>
+          <input type="number" class="form-control" id="ano" placeholder="Ano de Fabricacao">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="cor">Cor</label>
+          <input type="text" class="form-control" id="cor" placeholder="Cor do veiculo">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="tipo">Tipo</label>
           <select id="tipo" class="form-control">
-            <option selected>Escolha o tipo</option>
-            <option>Carro</option>
-            <option>Moto</option>
-            <option>Caminhão</option>
+            <option value="" disabled selected>Escolha o tipo</option>
+            <option value="Carro">Carro</option>
+            <option value="Moto">Moto</option>
+            <option value="Caminhão">Caminhão</option>
           </select>
         </div>
         <div class="form-group col-md-6">
-          <label for="input">Quilometragem</label>
-          <input type="text" class="form-control" id="Quilometragem" placeholder="Quilometragem do veiculo">
+          <label for="quilometragem">Quilometragem</label>
+          <input type="text" class="form-control" id="quilometragem" placeholder="Quilometragem do veiculo">
         </div>
         <div class="form-group col-md-6">
-          <label for="input">Numero de portas</label>
-          <input type="number" class="form-control" id="portas">
-      </div>
-        <div class="input-group col-md-2 urlss">
-          <label for="imagem">URL da Imagem:</label>
-          <input type="url" id="imagem" required>
+          <label for="portas">Número de Portas</label>
+          <input type="number" class="form-control" id="portas" placeholder="Ex.: 4">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="imagem">URL da Imagem</label>
+          <input type="url" class="form-control" id="imagem" placeholder="Insira a URL da imagem">
         </div>
       </div>
-      
-      <button type="submit" class="btn btn-primary">Cadastrar</button>
+      <button type="submit" class="btn btn-primary" onclick="cadastrarVeiculo(event)">Cadastrar</button>
     </form>
-
+    
+    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
