@@ -1,6 +1,6 @@
 const veiculos = []
 
-// Função para cadastrar um veículo
+
 function cadastrarVeiculo(event) {
   event.preventDefault(); 
 
@@ -14,7 +14,7 @@ function cadastrarVeiculo(event) {
   var portas = document.getElementById("portas").value;
   var imagem = document.getElementById("imagem").value;
 
-  // Validação dos campos (todos devem ser preenchidos)
+  // Validação dos campos 
   if (!marca || !modelo || !ano || !cor || !tipo || !quilometragem || !portas || !imagem) {
       alert("Por favor, preencha todos os campos!");
       return;
@@ -44,11 +44,11 @@ function cadastrarVeiculo(event) {
   // Mostrar uma mensagem de sucesso
   alert("Veículo cadastrado com sucesso!");
 
-  // Redirecionar para a página de listagem de veículos (ou recarregar a página)
+  // Redirecionar para a página de listagem de veículos 
   window.location.href = "listagemveiculos.html";
 }
 
-// Função para exibir veículos
+
 function exibirVeiculos() {
   const veiculosList = document.getElementById("veiculosdiv");
 
